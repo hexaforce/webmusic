@@ -1,0 +1,39 @@
+# Logging
+logging:
+  level:
+    org.springframework: INFO
+
+# Actuator / Management
+management:
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: '*'
+
+# Active Spring profiles
+spring:
+  profiles:
+    active: default
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        trace: false
+        web-allow-others: false
+  datasource:
+    url: 'jdbc:h2:~/test'
+    username: sa
+    password: 
+  jpa:
+    generate-ddl: true
+    show-sql: true
+  messages:
+    basename: messages
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+  song: 
+    #top-music-directory: '/home/ubuntu/music'
+    top-music-directory: '/home/relics9/music2'

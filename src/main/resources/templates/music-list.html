@@ -1,0 +1,43 @@
+<div id="jp_container">
+<div th:replace="~{top :: content (${page})}" />
+	<div class="container-fluid">
+		<div class="row">
+		<div th:replace="~{sidebar :: content (${page})}" />
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+			  
+			  <h2>Music list</h2>
+			  <div class="table-responsive">
+				  <table id="music_list" class=" table-sm">
+				    <thead>
+				      <tr class="table100-head">
+				        <th class="column1">Year</th>
+				        <th class="column2">Track</th>
+				        <th class="column3">Title</th>
+				        <th class="column4">Artist</th>
+				        <th class="column5">Album</th>
+				        <th class="column6">Play</th>
+				        <th class="column7">Download</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr ng-repeat="x in data" on-finish-render="ngRepeatFinished">
+				        <td class="column1">{{x.year}}</td>
+				        <td class="column2">{{x.track}}</td>
+				        <td class="column3">{{x.title}}</td>
+				        <td class="column4">{{x.artist}}</td>
+				        <td class="column5">{{x.album}}</td>
+				        <td class="column6">
+				          <a class="track col-sm-3 col-md-2 mr-0" href="/download-music/{{x.id}}" title="{{x.title}}">play</a>
+				        </td>
+				        <td class="column7">
+				          <a class="col-sm-3 col-md-2 mr-0" href="/download-music/{{x.id}}">download</a>
+				        </td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  Powered by <a href="http://jplayer.org/" target="_brank">jPlayer</a>
+			  </div>
+			</main>
+		</div>
+	</div>
+</div>
