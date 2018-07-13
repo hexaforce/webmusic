@@ -10,23 +10,26 @@
     <link th:href="@{/webjars/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
     <link th:href="@{/webjars/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.min.css}" rel="stylesheet">
 <!--     <link th:href="@{/css/util.css}" rel="stylesheet"> -->
+    <link th:href="@{/css/spin.css}" rel="stylesheet">
     <link th:href="@{/css/main.css}" rel="stylesheet">
   </head>
-
+  
   <body>
 
     <div ng-view></div>
 
+    <script th:src="@{/webjars/jquery/dist/jquery.min.js}"></script>
+    <!-- <script th:src="@{/webjars/jquery/dist/jquery.slim.min.js}"></script> -->
+    <script>window.jQuery || document.write('<script src="/webjars/jquery/3.3.1/dist/jquery.slim.min.js"><\/script>')</script>
+    
+    <script th:src="@{/js/spin.js}"></script>
+    
     <script th:src="@{/webjars/angular/angular.min.js}"></script>
     <script th:src="@{/webjars/angular-route/angular-route.min.js}"></script>
     <script th:src="@{/webjars/angular-sanitize/angular-sanitize.min.js}"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-route.min.js"></script> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular-sanitize.min.js"></script> -->
-    
-    <script th:src="@{/webjars/jquery/dist/jquery.min.js}"></script>
-    <!-- <script th:src="@{/webjars/jquery/dist/jquery.slim.min.js}"></script> -->
-    <script>window.jQuery || document.write('<script src="/webjars/jquery/3.3.1/dist/jquery.slim.min.js"><\/script>')</script>
     
     <script th:src="@{/js/vendor/popper.min.js}"></script>
     <!-- <script th:src="@{/webjars/popper.js/dist/popper.min.js}"></script> -->
@@ -39,6 +42,7 @@
     <script th:src="@{/webjars/jplayer/dist/jplayer/jquery.jplayer.min.js}"></script>
     
     <script th:src="@{/js/main.js}"></script>
+    
     
   </body>
 

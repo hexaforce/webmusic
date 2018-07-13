@@ -403,6 +403,10 @@ tbody tr:hover {
   }
 }
 
+div.spinner {
+  position: fixed !important;
+}
+
 @media ( max-width: 576px) {
   .container-table100 {
     padding-left: 15px;

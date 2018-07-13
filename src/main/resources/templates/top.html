@@ -4,9 +4,9 @@
     <div th:replace="~{music-player :: content (${page})}" />
 
 	<div class="input-group">
-		<input type="text" class="form-control" placeholder="曲名またはアーティスト検索" aria-label="Song name or artist search" aria-describedby="button-addon" ng-model="searchWord" ng-click="search()">
+		<input type="text" class="form-control" placeholder="曲名またはアーティスト検索" aria-label="Song name or artist search" aria-describedby="button-addon" ng-model="searchWord">
 		<div class="input-group-append" id="button-addon">
-			<button class="btn btn-outline-secondary" type="button">検索</button>
+			<button class="btn btn-outline-secondary" type="button" ng-click="search()">検索</button>
 		</div>
 	</div>
     
