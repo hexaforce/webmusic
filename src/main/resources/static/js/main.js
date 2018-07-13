@@ -32,7 +32,7 @@ function setup_jPlayer(){
 		keyEnabled: true,
 		remainingDuration: true,
 		toggleDuration: true,
-		volume: 0.1
+		volume: 0.5
 	});
 
 //	$(".jp-volume-controls").show();
