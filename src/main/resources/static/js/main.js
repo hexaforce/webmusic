@@ -80,20 +80,31 @@ app.factory('x', ['$http', '$q', function ($http, $q) {
     		};
     
     function init(scope) {
+    	
     	var spinner = new Spinner(opts).spin(document.getElementById('button-addon'));
-      $http.get("/search-music-list/" + scope.year, null).then(function (response) {
+    	
+    	$http.get("/search-music-list/" + scope.year, null).then(function (response) {
         scope.data = response.data;
+        
         spinner.spin();
+        
       }, function (response) {
         console.log('ERROR:' + response.data);
       });
     }
 
     function search(scope) {
+
+    	var spinner = new Spinner(opts).spin(document.getElementById('button-addon'));
+    	
       var request = new Object();
       request["searchWord"] = scope.searchWord;
+      
       $http.post("/search-music-list", request, null).then(function (response) {
         scope.data = response.data;
+
+        spinner.spin();
+        
       }, function (response) {
         console.log('ERROR:' + response.data);
       });
