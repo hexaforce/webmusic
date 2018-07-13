@@ -1,50 +1,30 @@
 <th:block th:fragment="content (select)">
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="https://github.com/hexaforce" target="_brank">Hexaforce WebMusic</a>
-    <ul class="navbar-nav px-3 w-100">
-      <li>
-        <div class="input-group mb-3">
-        <input type="text" class="form-control"  ng-model="searchWord" placeholder="曲名またはアーティスト検索" aria-label="曲名またはアーティスト検索" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" ng-click="search()">検索</button>
-        </div>
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav px-3 w-100">
-      <li>
-        <div class="input-group mb-3">
-        <div class="input-group-prepend">
-        <label class="input-group-text" for="inputGroupSelect">年代選択</label>
-        </div>
-        <select class="custom-select" ng-model="year" ng-change="init()" id="inputGroupSelect">
-          <option selected>選択</option>
-          <option value="1980">１９８０年</option>
-          <option value="2014">２０１４年</option>
-          <option value="2015">２０１５年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-          <option value="1980">１９８０年</option>
-        </select>
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav">
-      <li>
-        <div th:replace="~{music-player :: content (${page})}" />
-      </li>
-    </ul>
+    
+    <div th:replace="~{music-player :: content (${page})}" />
+
+	<div class="input-group">
+		<input type="text" class="form-control" placeholder="曲名またはアーティスト検索" aria-label="Song name or artist search" aria-describedby="button-addon" ng-model="searchWord" ng-click="search()">
+		<div class="input-group-append" id="button-addon">
+			<button class="btn btn-outline-secondary" type="button">検索</button>
+		</div>
+	</div>
+    
+<div class="input-group">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect">年代</label>
+  </div>
+  <select class="custom-select" id="inputGroupSelect" ng-model="year" ng-change="init()">
+    <option selected>選択</option>
+    <option value="1980">１９８０年</option>
+    <option value="2015">２０１５年</option>
+    <option value="2014">２０１４年</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+    
+    
+    
   </nav>
 </th:block>

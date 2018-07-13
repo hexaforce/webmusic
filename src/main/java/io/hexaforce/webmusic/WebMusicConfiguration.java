@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 public class WebMusicConfiguration implements WebMvcConfigurer {
 
 	@Autowired
-	private WebMusicProperties webMusicProperties;
+	private WebMusicProperties memorableSongsProperties;
 
 	@Autowired
 	private MusicItemRepository musicItemRepository;
@@ -41,7 +41,7 @@ public class WebMusicConfiguration implements WebMvcConfigurer {
 	@PostConstruct
 	private void setupSongListDatabase() {
 		List<MusicItem> musicItemList = new ArrayList<MusicItem>();
-		for (File musicDirectory : new File(webMusicProperties.getTopMusicDirectory()).listFiles()) {
+		for (File musicDirectory : new File(memorableSongsProperties.getTopMusicDirectory()).listFiles()) {
 			String year = musicDirectory.getName().substring(0, 4);
 			for (File musicFile : musicDirectory.listFiles()) {
 				if (musicFile.getPath().endsWith(".mp3")) {

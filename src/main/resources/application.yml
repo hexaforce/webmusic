@@ -1,7 +1,13 @@
+# database init, supports mysql too
+# database: h2
+# database: mysql
+
 # Logging
 logging:
   level:
     org.springframework: INFO
+#    org.springframework.web: DEBUG
+#    org.springframework.context.annotation: TRACE
 
 # Actuator / Management
 management:
@@ -35,5 +41,5 @@ spring:
     mode: HTML
     encoding: UTF-8
   song: 
-    #top-music-directory: '/home/ubuntu/music'
-    top-music-directory: '/home/relics9/music2'
+    top-music-directory: '/home/ubuntu/music'
+    #top-music-directory: '/home/relics9/music2'

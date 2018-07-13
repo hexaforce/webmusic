@@ -6,13 +6,13 @@ import org.springframework.stereotype.Component;
 import io.hexaforce.webmusic.WebMusicProperties;
 
 @Component
-public class MusicListUtile {
+public class WebMusicUtile {
 
 	@Autowired
-	private WebMusicProperties webMusicProperties;
+	private WebMusicProperties memorableSongsProperties;
 	
-	public String getTopMusicDirectory() {
-		return webMusicProperties.getTopMusicDirectory();
+	public void aaa() {
+		memorableSongsProperties.getTopMusicDirectory();
 	}
 	
 }

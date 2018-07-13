@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import io.hexaforce.webmusic.model.MusicItem;
 
-public interface MusicListService {
+public interface WebMusicService {
 
 	public List<MusicItem> getYearReleasedMusicItemList(String released);
 
