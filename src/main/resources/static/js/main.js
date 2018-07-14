@@ -35,18 +35,28 @@ function setup_jPlayer(){
 		volume: 0.5
 	});
 
-//	$(".jp-volume-controls").show();
-//	$(".jp-volume-bar").show();
-//	$(".jp-volume-bar-value").show();
-//	$(".jp-mute").show();
-//	$(".jp-volume-max").show();
+	showVolumeControls();
+	$(".jp-volume-controls").click(function(){showVolumeControls();});
+	$(".jp-volume-bar").click(function(){showVolumeControls();});
+	$(".jp-volume-bar-value").click(function(){showVolumeControls();});
+	$(".jp-mute").click(function(){showVolumeControls();});
+	$(".jp-volume-max").click(function(){showVolumeControls();});
 	
+}
+
+function showVolumeControls(){
+	console.log("showVolumeControls");
+	$(".jp-volume-controls").show();
+	$(".jp-volume-bar").show();
+	$(".jp-volume-bar-value").show();
+	$(".jp-mute").show();
+	$(".jp-volume-max").show();
 }
 
 //########################################
 //Angular
 //########################################
-var app = angular.module('WebMusic', ['ngRoute', 'ngSanitize']);
+var app = angular.module('WebMusic', ['ngRoute', 'ngSanitize', 'ngTouch']);
 
 //Service
 //****************************************

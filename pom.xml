@@ -48,7 +48,8 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- Library to Read Song Information, Such AS Song Title, Artist, and Album, From An MP3 File -->
+		<!-- Library to Read Song Information, Such AS Song Title, Artist, and 
+			Album, From An MP3 File -->
 		<dependency>
 			<groupId>net.sf.javamusictag</groupId>
 			<artifactId>jid3lib</artifactId>
@@ -109,6 +110,16 @@
 		<dependency>
 			<groupId>org.webjars.bower</groupId>
 			<artifactId>angular-sanitize</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>angular-animate</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>angular-touch</artifactId>
 			<version>1.7.0</version>
 		</dependency>
 		<dependency>
