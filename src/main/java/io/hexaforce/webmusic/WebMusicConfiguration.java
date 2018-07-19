@@ -30,18 +30,27 @@ public class WebMusicConfiguration implements WebMvcConfigurer {
 	private MusicItemRepository musicItemRepository;
 
 	private MusicItem convert(MP3File mp3File) {
+		
 		MusicItem musicItem = null;
 		if (mp3File.hasID3v1Tag())
 			musicItem = new MusicItem(mp3File.getID3v1Tag());
 		if (musicItem == null && mp3File.hasID3v2Tag())
 			musicItem = new MusicItem(mp3File.getID3v2Tag());
 		return musicItem;
+		
 	}
 
 	@PostConstruct
 	private void setupSongListDatabase() {
+		
 		List<MusicItem> musicItemList = new ArrayList<MusicItem>();
-		for (File musicDirectory : new File(memorableSongsProperties.getTopMusicDirectory()).listFiles()) {
+		
+		File topMusicDirectory = new File(memorableSongsProperties.getTopMusicDirectory());
+		if (!topMusicDirectory.exists()) {
+			return;
+		}
+		
+		for (File musicDirectory : topMusicDirectory.listFiles()) {
 			String year = musicDirectory.getName().substring(0, 4);
 			for (File musicFile : musicDirectory.listFiles()) {
 				if (musicFile.getPath().endsWith(".mp3")) {
@@ -60,11 +69,13 @@ public class WebMusicConfiguration implements WebMvcConfigurer {
 				}
 			}
 		}
+		
 		if (!musicItemList.isEmpty()) {
 			for (MusicItem x:musicItemList) {
 				log.info(x.getAbsolutePath());
 			}
 			musicItemRepository.saveAll(musicItemList);
 		}
+		
 	}
 }
