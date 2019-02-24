@@ -1,4 +1,4 @@
-package io.hexaforce.webmusic;
+package io.hexaforce.webmusic.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.hexaforce.webmusic.common.WebMusicUtile;
 import io.hexaforce.webmusic.model.MusicItem;
 import io.hexaforce.webmusic.model.MusicItemRepository;
 
@@ -15,9 +14,6 @@ public class WebMusicServiceImpl implements WebMusicService {
 
 	@Autowired
 	private MusicItemRepository musicItemRepository;
-
-	@Autowired
-	private WebMusicUtile songListUtile;
 
 	@Override
 	public List<MusicItem> getYearReleasedMusicItemList(String released) {
@@ -35,6 +31,5 @@ public class WebMusicServiceImpl implements WebMusicService {
 	public Optional<MusicItem> getMusicItem(Integer id) {
 		return musicItemRepository.findById(id);
 	}
-	
-	
+
 }

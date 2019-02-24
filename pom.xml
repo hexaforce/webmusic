@@ -16,7 +16,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.3.RELEASE</version>
+		<version>2.1.2.RELEASE</version>
 		<relativePath />
 	</parent>
 
@@ -48,20 +48,22 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- Library to Read Song Information, Such AS Song Title, Artist, and 
-			Album, From An MP3 File -->
-		<dependency>
-			<groupId>net.sf.javamusictag</groupId>
-			<artifactId>jid3lib</artifactId>
-			<version>0.5.4</version>
-		</dependency>
+<dependency>
+  <groupId>com.mpatric</groupId>
+  <artifactId>mp3agic</artifactId>
+  <version>0.9.1</version>
+</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>net.sf.javamusictag</groupId> -->
+<!-- 			<artifactId>jid3lib</artifactId> -->
+<!-- 			<version>0.5.4</version> -->
+<!-- 		</dependency> -->
 
-		<!-- The jQuery HTML5 Audio / Video Library -->
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>jplayer</artifactId>
-			<version>2.9.2</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>jplayer</artifactId> -->
+<!-- 			<version>2.9.2</version> -->
+<!-- 		</dependency> -->
 
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -73,55 +75,55 @@
 			<artifactId>webjars-locator-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>jquery</artifactId>
-			<version>3.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>4.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>popper.js</artifactId>
-			<version>1.14.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>popper.js</artifactId>
-			<version>1.14.3</version>
-		</dependency>
-		<dependency>
 			<groupId>org.webjars</groupId>
-			<artifactId>angularjs</artifactId>
-			<version>1.7.2</version>
+			<artifactId>jquery</artifactId>
+			<version>3.3.1-2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>angular</artifactId>
-			<version>1.7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>angular-route</artifactId>
-			<version>1.7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>angular-sanitize</artifactId>
-			<version>1.7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>angular-animate</artifactId>
-			<version>1.7.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>angular-touch</artifactId>
-			<version>1.7.0</version>
-		</dependency>
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>bootstrap</artifactId> -->
+<!-- 			<version>4.1.1</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>popper.js</artifactId> -->
+<!-- 			<version>1.14.3</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>popper.js</artifactId> -->
+<!-- 			<version>1.14.3</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars</groupId> -->
+<!-- 			<artifactId>angularjs</artifactId> -->
+<!-- 			<version>1.7.2</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>angular</artifactId> -->
+<!-- 			<version>1.7.0</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>angular-route</artifactId> -->
+<!-- 			<version>1.7.0</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>angular-sanitize</artifactId> -->
+<!-- 			<version>1.7.0</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>angular-animate</artifactId> -->
+<!-- 			<version>1.7.0</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.webjars.bower</groupId> -->
+<!-- 			<artifactId>angular-touch</artifactId> -->
+<!-- 			<version>1.7.0</version> -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>

@@ -10,7 +10,7 @@ public interface WebMusicService {
 	public List<MusicItem> getYearReleasedMusicItemList(String released);
 
 	public List<MusicItem> getArtistContainingMusicItemList(String searchWord);
-	
+
 	public Optional<MusicItem> getMusicItem(Integer id);
-	
+
 }
