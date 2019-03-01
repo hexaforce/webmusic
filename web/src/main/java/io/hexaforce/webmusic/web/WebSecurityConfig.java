@@ -1,4 +1,4 @@
-package hello;
+package io.hexaforce.webmusic.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

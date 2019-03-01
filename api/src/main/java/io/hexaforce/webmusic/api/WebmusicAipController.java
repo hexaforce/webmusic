@@ -1,4 +1,4 @@
-package io.hexaforce.webmusic.aip;
+package io.hexaforce.webmusic.api;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;

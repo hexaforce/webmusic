@@ -1,4 +1,4 @@
-package hello;
+package io.hexaforce.webmusic.web;
 
 import lombok.Getter;
 

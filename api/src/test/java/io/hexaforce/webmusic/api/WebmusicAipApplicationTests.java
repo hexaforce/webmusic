@@ -1,4 +1,4 @@
-package io.hexaforce.webmusic.aip;
+package io.hexaforce.webmusic.api;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
