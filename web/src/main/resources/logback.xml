@@ -11,11 +11,11 @@
 
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 
-		<file>logs/webmusic.log</file>
+		<file>logs/web.log</file>
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/webmusic.log.%d{yyyy-MM-dd}</fileNamePattern>
-			<maxHistory>30</maxHistory>
+			<fileNamePattern>logs/web.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
 		</rollingPolicy>
 
 		<!-- <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> -->

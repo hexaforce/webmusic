@@ -19,6 +19,8 @@ import io.hexaforce.webmusic.model.MP3SummaryEntity;
 import io.hexaforce.webmusic.model.MP3SummaryRepository;
 import lombok.extern.slf4j.Slf4j;
 
+import static java.util.Comparator.*;
+
 @Service
 @Slf4j
 @SuppressWarnings("unchecked")
@@ -55,7 +57,14 @@ public class WebmusicAipService {
 			List<BigInteger> mp3List = m.createNativeQuery("SELECT id FROM mp3path WHERE file_path LIKE '%" + word + "%' ORDER BY id;").getResultList();
 			if (mp3List.isEmpty())
 				return Collections.emptyList();
-			return sr.findAllById(mp3List.stream().map(BigInteger::intValue).collect(Collectors.toList()));
+
+			List<Integer> ids = mp3List.stream().map(BigInteger::intValue).collect(Collectors.toList());
+			List<MP3SummaryEntity> results = sr.findAllById(ids);
+
+			results.sort(comparing(MP3SummaryEntity::getTrack));
+			results.sort(comparing(MP3SummaryEntity::getYear));
+			return results;
+
 		} catch (Exception e) {
 			log.warn(e.getMessage());
 			return Collections.emptyList();

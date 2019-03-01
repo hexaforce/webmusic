@@ -7,15 +7,15 @@
 	<include resource="org/springframework/boot/logging/logback/base.xml" />
 	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
 	
-	<logger name="io.hexaforce.songs" level="DEBUG" />
+	<logger name="io.hexaforce.webmusic" level="DEBUG" />
 	
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
 
-		<file>logs/memorable-songs.log</file>
+		<file>logs/api.log</file>
 
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/memorable-songs.log.%d{yyyy-MM-dd}</fileNamePattern>
-			<maxHistory>30</maxHistory>
+			<fileNamePattern>logs/api.log.%d{yyyy-MM-dd}</fileNamePattern>
+			<maxHistory>7</maxHistory>
 		</rollingPolicy>
 
 <!-- 	<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy"> -->
