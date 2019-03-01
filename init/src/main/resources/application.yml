@@ -1,0 +1,23 @@
+io:
+  hexaforce:
+    webmusic:
+#      mp3-directory: '/Users/relics9/music2'
+      mp3-directory: '/home/ec2-user/Music2'
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: none
+  datasource:
+#    url: 'jdbc:mysql://localhost:3306/webmusic?useSSL=false&characterEncoding=UTF-8'
+    url: 'jdbc:mysql://hexaforce.cxubto2kpsqk.ap-northeast-1.rds.amazonaws.com:3306/webmusic?useSSL=false&characterEncoding=UTF-8'
+#    username: test
+    username: webmusic
+    password: password
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+    
+    

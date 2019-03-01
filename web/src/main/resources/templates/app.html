@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>HexaForce Webmusic</title>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/angularjs/angular.min.js}"></script>
+    <script th:src="@{/webjars/angularjs/angular-route.min.js}"></script>
+    <script th:src="@{/webjars/angularjs/angular-sanitize.min.js}"></script>
+    <link th:href="@{/webjars/Semantic-UI/semantic.min.css}" rel="stylesheet">
+    <script th:src="@{/webjars/Semantic-UI/semantic.min.js}"></script>
+    <script th:src="@{/audiojs/audio.min.js}"></script>
+    <script src="app.js"></script>
+  </head>
+  <body ng-app="WebMusic">
+    <div class="ui container" ng-controller="AppController as app">
+      <div class="ui stackable container menu">
+        <div class="item">
+          <img src="images/logo.png">
+        </div>
+        <div class="item">
+          <div class="ui action left icon input">
+            <i class="search icon"></i>
+            <input type="text" ng-model="word" placeholder="年、タイトル、アーティストなど">
+            <button class="ui button" ng-click="searchWord()">検索</button>
+          </div>
+        </div>
+        <div class="right menu">
+          <div class="item">
+            <i class="user icon"></i>
+            <div th:inline="text">[[${#httpServletRequest.remoteUser}]]</div>
+            <form th:action="@{/logout}" method="post" >
+              <input type="submit" value="ログアウト" class="ui right floated primary button" />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div id="wrapper">
+        <audio preload></audio>
+      </div>
+      <table class="ui celled table">
+        <thead>
+          <th>プレイ</th>
+          <th>ダウンロード</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="music in musicList" on-finish-render="ngRepeatFinished">
+            <td>
+              <h4 class="ui image header">
+                <img src="images/music.png" class="ui mini rounded image" />
+                <div class="content">{{music.title}} 
+                  <div class="sub header">{{music.artist}} </div>
+                  <div class="sub header" ng-if="music.lengthInSeconds % 60 > 9">{{ Math.floor(music.lengthInSeconds / 60) }}:{{(music.lengthInSeconds % 60)}}</div>
+                  <div class="sub header" ng-if="music.lengthInSeconds % 60 < 10">{{ Math.floor(music.lengthInSeconds / 60) }}:0{{(music.lengthInSeconds % 60)}}</div>
+                </div>
+                <div class="ui inverted green button" ng-click="play(music.id)">プレイ</div>
+              </h4>
+            </td>
+            <td>
+              <h4 class="ui image header">
+                <div class="content">{{music.album}} - Ranking {{music.track}} 
+                  <div class="sub header">{{music.bitRate}} kbps ({{music.vbr}})</div>
+                  <div class="sub header">{{music.sampleRate}} Hz</div>
+                </div>
+                <a href="http://13.230.163.159:8090/mp3/{{music.id}}">
+                  <div class="ui inverted blue button">ダウンロード</div>
+                </a>
+                <img src="images/download.png" class="ui mini rounded image" />
+              </h4>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
