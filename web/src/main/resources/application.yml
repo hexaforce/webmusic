@@ -1,0 +1,9 @@
+spring:
+  messages:
+    basename: messages
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+#logging:
+#  level:
+#    org.springframework: INFO
