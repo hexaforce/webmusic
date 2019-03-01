@@ -1,4 +1,4 @@
-package io.hexaforce.webmusic;
+package io.hexaforce.webmusic.init;
 
 import java.io.File;
 import java.util.concurrent.atomic.AtomicInteger;
