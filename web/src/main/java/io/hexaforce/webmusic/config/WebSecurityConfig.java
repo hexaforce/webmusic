@@ -10,36 +10,32 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
-import io.hexaforce.webmusic.web.PageDefine;
+import io.hexaforce.webmusic.Application.PageDefine;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-        .authorizeRequests().antMatchers(
-            PageDefine.WELCOME.getViewController(), 
-            PageDefine.INDEX.getViewController()
-          ).permitAll().anyRequest().authenticated()
-        .and().formLogin().loginPage(
-            PageDefine.LOGIN.getViewController()
-          ).permitAll()
-        .and().logout().permitAll();
-        //.and().requiresChannel().anyRequest().requiresSecure();
-    }
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+		http.authorizeRequests()
+				.antMatchers(
+						PageDefine.WELCOME.getViewController(), 
+						PageDefine.INDEX.getViewController()).permitAll()
+				.anyRequest().authenticated()
+				.and().formLogin().loginPage(
+						PageDefine.LOGIN.getViewController()).permitAll()
+				.and().logout().permitAll();
+		// .and().requiresChannel().anyRequest().requiresSecure();
+	}
 
-    @Bean
-    @Override
-    @SuppressWarnings("deprecation")
-    public UserDetailsService userDetailsService() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-          .username("yoko")
-          .password("lovelove")
-          .roles("USER")
-        .build();
-        return new InMemoryUserDetailsManager(user);
-    }
+	@Bean
+	@Override
+	@SuppressWarnings("deprecation")
+	public UserDetailsService userDetailsService() {
+		UserDetails user = User.withDefaultPasswordEncoder().username("yoko").password("lovelove").roles("USER")
+				.build();
+		return new InMemoryUserDetailsManager(user);
+	}
 
 }
